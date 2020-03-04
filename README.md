@@ -1,6 +1,6 @@
-# Validation of Set Associative Hash used in FqCodel in ns-3
+## Validation of Set Associative Hash used in FqCodel in ns-3
 The data for the graph is generated through the use of files in this repository. 
-## Steps to replicate the graph
+### Steps to replicate the graph
 * Python code generates the random hash values which will be attributed to each packet
 * FqCoDelQueueDiscCollision TestSuite takes as input the file containing the hash values and inputs it into the modified fq-codel-queue-disc 
 * The boolean variable SetAssociativeHash can be used to enable/disable the Set Associativity of FqCodel
