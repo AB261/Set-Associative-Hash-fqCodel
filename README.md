@@ -9,3 +9,16 @@ The data for the graph is generated through the use of files in this repository.
 * Input the probabilities into excel sheet and graph probability vs. the number of flows graph 
 * Perform more experiments to get a smoother curve
 * Our hash value files are included along with the excel sheet and the generated graph
+
+### Testing:
+
+Commands to Run:
+```shell
+NS_LOG="FqCoDelQueueDisc" ./test.py -s fq-codel-queue-disc --text=results
+
+NS_LOG="FqCoDelQueueDisc" ./waf --run "test-runner --suite=fq-codel-queue-disc"
+
+NS_LOG="FqCoDelQueueDisc:FqCoDelQueueDisc2:PacketFilter:QueueDisc" ./waf --run "test-runner --suite=fq-codel-queue-disc"
+
+NS_LOG="FqCoDelQueueDisc" ./waf --run "test-runner --suite=fq-codel-queue-disc" > <generated-file-name>
+```
