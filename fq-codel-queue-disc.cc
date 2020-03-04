@@ -129,8 +129,8 @@ FqCoDelQueueDisc::GetTypeId (void)
               UintegerValue (0), MakeUintegerAccessor (&FqCoDelQueueDisc::m_perturbation),
               MakeUintegerChecker<uint32_t> ())
           .AddAttribute (
-              "SetAssociativity", "Variable to use setassociativity hash", BooleanValue (false),
-              MakeBooleanAccessor (&FqCoDelQueueDisc::m_setAssociativity), MakeBooleanChecker ());
+              "SetAssociativeHash", "Enable/Disable Set Associative Has", BooleanValue (false),
+              MakeBooleanAccessor (&FqCoDelQueueDisc::m_setAssociativeHash), MakeBooleanChecker ());
   return tid;
 }
 
@@ -179,7 +179,7 @@ FqCoDelQueueDisc::DoEnqueue (Ptr<QueueDiscItem> item)
     {
       exit (0);
     }
-  if (m_setAssociativity)
+  if (m_setAssociativeHash)
     {
       uint32_t h = 0;
       uint32_t innerHash, outerHash;
