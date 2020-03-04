@@ -119,7 +119,7 @@ FqCoDelQueueDiscNoSuitableFilter::DoRun (void)
 {
   // Packets that cannot be classified by the available filters should be dropped
   Ptr<FqCoDelQueueDisc> queueDisc = CreateObjectWithAttributes<FqCoDelQueueDisc> (
-      "MaxSize", StringValue ("4p"), "SetAssociativity", BooleanValue (true));
+      "MaxSize", StringValue ("4p"), "SetAssociativeHash", BooleanValue (true));
   Ptr<Ipv4TestPacketFilter> filter = CreateObject<Ipv4TestPacketFilter> ();
   hash = -1;
   queueDisc->AddPacketFilter (filter);
@@ -182,7 +182,7 @@ void
 FqCoDelQueueDiscIPFlowsSeparationAndPacketLimit::DoRun (void)
 {
   Ptr<FqCoDelQueueDisc> queueDisc = CreateObjectWithAttributes<FqCoDelQueueDisc> (
-      "MaxSize", StringValue ("4p"), "SetAssociativity", BooleanValue (true));
+      "MaxSize", StringValue ("4p"), "SetAssociativeHash", BooleanValue (true));
 
   queueDisc->SetQuantum (1500);
   queueDisc->Initialize ();
@@ -258,7 +258,7 @@ FqCoDelQueueDiscDeficit::AddPacket (Ptr<FqCoDelQueueDisc> queue, Ipv4Header hdr)
 void
 FqCoDelQueueDiscDeficit::DoRun (void)
 {
-  Ptr<FqCoDelQueueDisc> queueDisc = CreateObjectWithAttributes<FqCoDelQueueDisc> ("SetAssociativity", BooleanValue (true));
+  Ptr<FqCoDelQueueDisc> queueDisc = CreateObjectWithAttributes<FqCoDelQueueDisc> ("SetAssociativeHash", BooleanValue (true));
   queueDisc->SetQuantum (90);
   queueDisc->Initialize ();
 
@@ -438,7 +438,7 @@ void
 FqCoDelQueueDiscTCPFlowsSeparation::DoRun (void)
 {
   Ptr<FqCoDelQueueDisc> queueDisc = CreateObjectWithAttributes<FqCoDelQueueDisc> (
-      "MaxSize", StringValue ("10p"), "SetAssociativity", BooleanValue (true));
+      "MaxSize", StringValue ("10p"), "SetAssociativeHash", BooleanValue (true));
 
   queueDisc->SetQuantum (1500);
   queueDisc->Initialize ();
@@ -540,7 +540,7 @@ void
 FqCoDelQueueDiscUDPFlowsSeparation::DoRun (void)
 {
   Ptr<FqCoDelQueueDisc> queueDisc = CreateObjectWithAttributes<FqCoDelQueueDisc> (
-      "MaxSize", StringValue ("10p"), "SetAssociativity", BooleanValue (true));
+      "MaxSize", StringValue ("10p"), "SetAssociativeHash", BooleanValue (true));
 
   queueDisc->SetQuantum (1500);
   queueDisc->Initialize ();
@@ -650,7 +650,7 @@ FqCoDelQueueDiscSetLinearProbing::AddPacket (Ptr<FqCoDelQueueDisc> queue, Ipv4He
 void
 FqCoDelQueueDiscSetLinearProbing::DoRun (void)
 {
-  Ptr<FqCoDelQueueDisc> queueDisc = CreateObjectWithAttributes<FqCoDelQueueDisc> ("SetAssociativity", BooleanValue (true));
+  Ptr<FqCoDelQueueDisc> queueDisc = CreateObjectWithAttributes<FqCoDelQueueDisc> ("SetAssociativeHash", BooleanValue (true));
   queueDisc->SetQuantum (90);
   queueDisc->Initialize ();
 
@@ -770,7 +770,7 @@ FqCoDelQueueDiscCollision::AddPacket (Ptr<FqCoDelQueueDisc> queue, Ipv4Header hd
 void
 FqCoDelQueueDiscCollision::DoRun (void)
 {
-  Ptr<FqCoDelQueueDisc> queueDisc = CreateObjectWithAttributes<FqCoDelQueueDisc> ("SetAssociativity", BooleanValue (true));
+  Ptr<FqCoDelQueueDisc> queueDisc = CreateObjectWithAttributes<FqCoDelQueueDisc> ("SetAssociativeHash", BooleanValue (true));
   queueDisc->SetQuantum (90);
   queueDisc->Initialize ();
 
