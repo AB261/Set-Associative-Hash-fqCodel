@@ -15,7 +15,7 @@ NS_LOG="FqCoDelQueueDisc" ./waf --run "test-runner --suite=fq-codel-queue-disc"
 
 or
 
-NS_LOG="FqCoDelQueueDisc" ./waf --run "test-runner --suite=fq-codel-queue-disc" > <generated-file-name>
+NS_LOG="FqCoDelQueueDisc" ./waf --run "test-runner --suite=fq-codel-queue-disc" > generated-file-name
 ```
 * The test will output collision probabilities (sets filled/ total sets or queues filled/total queues) for either the set-associative hash or traditional hash depending on which is enabled in the test suite 
 * Input the probabilities into excel sheet and graph probability vs. the number of flows. An example is given [here](https://github.com/AB261/Set-Associative-Hash-fqCodel/blob/master/set_associative_hash.ods) 
